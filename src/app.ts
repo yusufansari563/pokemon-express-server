@@ -2,9 +2,11 @@
 import express, { Application, Request, Response, NextFunction } from "express";
 import http from "http";
 import mongoose from "mongoose";
+import swaggerUi from "swagger-ui-express";
 
 // import from repository files
 // import { router } from "./routes/PokedexRoute";
+import swaggerDocument from "./../swagger.json";
 import { config } from "./config/Config";
 import Logging from "./library/logging";
 import AuthorRouter from './routes/Author';
@@ -60,6 +62,11 @@ const StartServer = () => {
     app.use('/items', ItemsRouter);
     app.use('/types', TypesRouter);
 
+    // app.use(
+    //     '/',
+    //     swaggerUi.serve,
+    //     swaggerUi.setup(swaggerDocument)
+    // );
     // health check point
     app.get('/ping', (req, res, next) => res.status(200).json({ "message": "pong" }));
 
