@@ -1,0 +1,24 @@
+version: '3'
+services:
+  env:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    ports:
+      - "9000:9090"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    command: >
+      sh -c "npm run dev"
+    hostname: "node-server"
+
+  webserver:
+    build:
+      context: ./
+      dockerfile: ./proxy/Dockerfile
+    container_name: nginx-server
+    ports:
+      - "80:80"
+    depends_on:
+      - env

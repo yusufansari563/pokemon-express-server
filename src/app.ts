@@ -6,7 +6,7 @@ import swaggerUi from "swagger-ui-express";
 
 // import from repository files
 // import { router } from "./routes/PokedexRoute";
-import swaggerDocument from "./../swagger.json";
+// import swaggerDocument from "./../swagger.json";
 import { config } from "./config/Config";
 import Logging from "./library/logging";
 import AuthorRouter from './routes/Author';
