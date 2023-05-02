@@ -12,13 +12,13 @@ const DEFAULT_PAGE = 1;
 const SERVER_PORT = process.env.SERVER_PORT ? Number(process.env.SERVER_PORT) : 1337;
 
 export const config = {
-    mongo: {
-        url: MONGO_URL
-    },
-    server: {
-        port: SERVER_PORT
-    },
-    MAX_FETCH_SIZE,
-    DEFAULT_FETCH_SIZE,
-    DEFAULT_PAGE
-}
+  mongo: {
+    url: MONGO_URL
+  },
+  server: {
+    port: SERVER_PORT
+  },
+  MAX_FETCH_SIZE,
+  DEFAULT_FETCH_SIZE,
+  DEFAULT_PAGE
+};

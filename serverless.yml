@@ -1,0 +1,24 @@
+service: pokemonExpressServer
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  memorySize: 2048
+  stage: dev
+  timeout: 15
+  region: us-east-1
+
+functions:
+  hello:
+    handler: handler.hello
+    #    The following are a few example events you can configure
+    #    NOTE: Please make sure to change your handler code to work with those events
+    #    Check the event documentation for details
+    events:
+      - http: ANY /{proxy*}
+      - http: ANY /
+    environment:
+      MONGO_USERNAME: yusufansari563
+      MONGO_PASSWORD: yusufansari563
+      SERVER_PORT: 9090
